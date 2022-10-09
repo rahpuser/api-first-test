@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "27463132-58c5-4724-b985-801715bd252c",
+		"name": "Videos Doc",
+		"description": "Simple API to demo the API Builder in Postman\n\nContact Support:\n Name: Arlemi Turpault\n Email: arlemi@postman.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "videos",
+			"item": [
+				{
+					"name": "List all videos",
+					"id": "c14a1159-0751-479e-b055-c23e1f0bed36",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/videos/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"videos",
+								"all"
+							]
+						},
+						"description": "Returns a list of all the Exploratory videos"
+					},
+					"response": [
+						{
+							"id": "6b0be301-f2d1-41ac-b532-7eac0b94ede9",
+							"name": "List of videos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/videos/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"videos",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n  {\n    \"name\": \"Public Workspaces\",\n    \"url\": \"https://www.youtube.com/watch?v=DjGbMdqnY64\",\n    \"views\": 7483\n  },\n  {\n    \"name\": \"Public Workspaces\",\n    \"url\": \"https://www.youtube.com/watch?v=DjGbMdqnY64\",\n    \"views\": 7483\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Fetch one video by ID",
+					"id": "2aa0bc9d-7e12-48b5-881f-527f78cd3517",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/videos/:videoId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"videos",
+								":videoId"
+							],
+							"variable": [
+								{
+									"id": "060418b1-2e3e-4858-b34d-4a65a888ff67",
+									"key": "videoId",
+									"value": "4",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Get a single video"
+					},
+					"response": [
+						{
+							"id": "c63dd0d8-2b39-459a-b5e5-10b0e7d026d4",
+							"name": "List of videos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/videos/:videoId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"videos",
+										":videoId"
+									],
+									"variable": [
+										{
+											"key": "videoId",
+											"value": "4",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"name\": \"Public Workspaces\",\n  \"url\": \"https://www.youtube.com/watch?v=DjGbMdqnY64\",\n  \"views\": 7483\n}"
+						}
+					]
+				}
+			],
+			"id": "3492d8f9-79a0-4bca-90ed-b46a084d75d8"
+		}
+	],
+	"variable": [
+		{
+			"id": "2fd4e66c-618e-4161-b9f4-0da5c201bc2b",
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
